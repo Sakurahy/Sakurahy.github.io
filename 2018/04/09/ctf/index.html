@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>南邮ctf部分题解 | Piggie</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="Piggie" type="application/atom+xml">
+    
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">Piggie</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>南邮ctf部分题解</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2018-04-09</span><br />
+		
+		
+	</div>
+
+	
+
+	
+		<p>南京邮电大学网络攻防训练平台部分题目详解（writeup）</p>
+<a id="more"></a>
+<h3 id="1-签到题"><a href="#1-签到题" class="headerlink" title="1.签到题"></a>1.<a href="http://chinalover.sinaapp.com/web1/" target="_blank" rel="noopener">签到题</a></h3><p>打开链接，很简单什么都没有。<br><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-09f897c57e6c6d96.png?imageMogr2/auto-orient/" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>我们直接查看网页源码<br>发现答案明晃晃的就在眼前。。。<br><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-b8fe6e191fc4a6d0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/618" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>nctf{flag_admiaanaaaaaaaaaaa}</p>
+<p><strong>注意源码里面的</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a style=&quot;display:none&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>这句HTML属性让flag不显示。具体参考HTML知识。</strong></p>
+<hr>
+<h3 id="2-md5-collision"><a href="#2-md5-collision" class="headerlink" title="2.md5 collision"></a>2.<a href="http://chinalover.sinaapp.com/web19/" target="_blank" rel="noopener">md5 collision</a></h3><p>打开题目我们发现已经给出了源码。<br><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-87e93c9b00e04cfe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="image"><figcaption class="figure__caption">image</figcaption></figure><br>仔细阅读源码发现源码的含义为：md51的值为QNKCDZO进行MD5加密后的值，md52的值为你上传的a的值进行MD5加密后的值。而题目的要求则为让md51=md52，而且a不能等于md51。按照正常思路来说一个值既要等于另一个又要不等于，这好像有点矛盾了。我们先不着急，既然题目让我们进行MD5加密，那么我们就把QNKCDZO这个字段加密一下看，得到MD5值0e830400451993494058024219903391。</p>
+<h4 id="PHP在处理哈希字符串时，会利用”-”或”-”来对哈希值进行比较，它把每一个以”0E”开头的哈希值都解释为0，所以如果两个不同的密码经过哈希以后，其哈希值都是以”0E”开头的，那么PHP将会认为他们相同，都是0"><a href="#PHP在处理哈希字符串时，会利用”-”或”-”来对哈希值进行比较，它把每一个以”0E”开头的哈希值都解释为0，所以如果两个不同的密码经过哈希以后，其哈希值都是以”0E”开头的，那么PHP将会认为他们相同，都是0" class="headerlink" title="PHP在处理哈希字符串时，会利用”!=”或”==”来对哈希值进行比较，它把每一个以”0E”开头的哈希值都解释为0，所以如果两个不同的密码经过哈希以后，其哈希值都是以”0E”开头的，那么PHP将会认为他们相同，都是0."></a>PHP在处理哈希字符串时，会利用”!=”或”==”来对哈希值进行比较，它把每一个以”0E”开头的哈希值都解释为0，所以如果两个不同的密码经过哈希以后，其哈希值都是以”0E”开头的，那么PHP将会认为他们相同，都是0.</h4><p>也就是说题目中给出的QNKCDZO这个字段加密后的值等于0，所以只要我们在找出一个MD5加密后是0e开头的字段就行了，百度查一下，随意选一个字段例如我选的s878926199a。上传a的值为s878926199a。<br>flag    nctf{md5_collision_is_easy}<br><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-ef1e7e8e7f162ddd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/684" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<hr>
+<h3 id="3-签到2"><a href="#3-签到2" class="headerlink" title="3.签到2"></a>3.<a href="http://teamxlc.sinaapp.com/web1/02298884f0724c04293b4d8c0178615e/index.php" target="_blank" rel="noopener">签到2</a></h3><p>打开题目链接</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-17398e615426fe47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/353" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>解题思路很清晰，在输入框输入口令即可得到flag。但是我们发现输入框只允许输入10个字母，而zhimakaimen这个口令有11个，长度不允许。这时候我们查看一下网页源码（无论任何情况先看看源码是一个很好的习惯，可能有时候就有意想不到的收获哦）。</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-8ec0060faf3cb99f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="image"><figcaption class="figure__caption">image</figcaption></figure><br>重点在这里，我们发现输入框的maxlength也就是最大长度为10。这时候我们就已经有明确的方法了，直接进控制台修改一下就好了，f12进控制台找到maxlength修改为大于等于11的任何数字，如图我修改为100。</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-64ac4ed232a9501d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/698" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>接着输入口令得到flag    nctf{follow_me_to_exploit}</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-983b2eca0906ce2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/365" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<hr>
+<p>4.<a href="http://chinalover.sinaapp.com/web3/" target="_blank" rel="noopener">层层递进</a></p>
+<p>打开链接啥都看不出来。。。是个博客貌似。</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-91e2252435daee37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>老样子打开源码瞧一瞧。</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-ded94491454a8901.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>emmmmmmmmm好像还是啥都看不出来。。。</p>
+<p>再仔细看看。</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-3730582fec40a497.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/311" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>看到这是个什么东西点进去看看。发现还是原来那个博客，根据题目名称层层递进我们接着继续查看源码。跟随链接，依次访问SO.html -&gt; S0.html-&gt;SO.htm -&gt;S0.htm-&gt;404.html。</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-fa14c706fc015d97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/308" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>👇</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-ddc7156c20bd9f79.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/286" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>👇</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-d7c2f2ea40afe089.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/290" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>直到这里我们发现好像和原来不太一样，再进去看看。</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-46848e5adc18ec83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/311" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>👇</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-804bd7e780fff696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/696" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>网页不是原来那个博客了，他给我们讲了个深情的故事。但是并没有什么用。我们一样再去看源码。终于，功夫不负有心人，一眼看到了flag。。。</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-40a82c3a2a58170e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/439" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<hr>
+<p>5.<a href="http://chinalover.sinaapp.com/web2/index.html" target="_blank" rel="noopener">这题真不是web</a></p>
+<p>打开题目链接发现什么都没有只有一张gif图片。</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-7c79adbec200c905.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/344" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>我们把这个gif图片保存下来直接用winhex打开，很长一大堆看不懂的。。。直接拉到最后，get flag</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-4a698c5174152860.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<hr>
+
+	
+
+	
+		<span class="different-posts"><a href="/2018/04/09/ctf/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2018 Sakura | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>

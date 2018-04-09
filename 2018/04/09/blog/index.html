@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>GitHub+Hexo 搭建个人网站详细教程 | Piggie</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="Piggie" type="application/atom+xml">
+    
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">Piggie</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>GitHub+Hexo 搭建个人网站详细教程</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2018-04-09</span><br />
+		
+		
+	</div>
+
+	
+
+	
+		<p>随着互联网浪潮的翻腾，国内外涌现出越来越多优秀的社交网站让用户分享信息更加便捷。然后，如果你是一个不甘寂寞的程序猿（媛），是否也想要搭建一个属于自己的个人网站，如果你曾经或者现在正有这样的想法，请跟随这篇文章发挥你的Geek精神，让你快速拥有自己的博客网站，写文章记录生活，享受这种从0到1的过程。</p>
+<a id="more"></a>
+<h3 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo ?"></a>什么是Hexo ?</h3><p><figure class="figure"><img src="https://pic1.zhimg.com/80/v2-6890485c84748900d9dae824b7f7cbb1_hd.jpg" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。这里我们选用的是GitHub，你没看错，全球最大的同性恋交友网站（逃……）。Hexo同时也是GitHub上的开源项目，参见：hexojs/hexo 如果想要更加全面的了解Hexo，可以到其官网  Hexo  了解更多的细节，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。这里，默认各位猿/媛儿都知道GitHub就不再赘述。</p>
+<h4 id="这是我的个人博客-Sn1per"><a href="#这是我的个人博客-Sn1per" class="headerlink" title="这是我的个人博客 :Sn1per"></a>这是我的个人博客 :<a href="https://sn1per.cn/" target="_blank" rel="noopener">Sn1per</a></h4><p>下面正式从零开始搭建年轻人的第一个网站。</p>
+<h4 id="搭建步骤："><a href="#搭建步骤：" class="headerlink" title="搭建步骤："></a>搭建步骤：</h4><p>1.GitHub创建个人仓库</p>
+<p>2.安装Git</p>
+<p>3.安装Node.js</p>
+<p>4.安装Hexo</p>
+<p>5.推送网站</p>
+<p>6.绑定域名</p>
+<p>7.更换主题</p>
+<p>8.发布文章</p>
+<hr>
+<h5 id="1-GitHub创建个人仓库"><a href="#1-GitHub创建个人仓库" class="headerlink" title="1.GitHub创建个人仓库"></a>1.GitHub创建个人仓库</h5><p>首先你需要有一个github账号，如果有就直接登陆，没有的话需要注册一个。（<a href="https://link.zhihu.com/?target=https%3A//github.com/" target="_blank" rel="noopener">传送门</a>）</p>
+<p>登陆之后，点击GitHub中的New repository创建新仓库。仓库名应该为：username.github.io 这个格式，这是固定写法，比如我的仓库名为</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-2441a917b617da6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/471" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<hr>
+<h5 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a>2.安装git</h5><p>什么是Git ?简单来说Git是开源的分布式版本控制系统，用于敏捷高效地处理项目。我们网站在本地搭建好了，需要使用Git同步到GitHub上。如果想要了解Git的细节，参看廖雪峰老师的Git教程：Git教程  从Git官网下载：<a href="https://link.zhihu.com/?target=https%3A//git-scm.com/download/win" target="_blank" rel="noopener">Git - Downloading Package</a> 现在的机子基本都是64位的，选择64位的安装包，下载后安装，在命令行里输入git测试是否安装成功，若安装失败，参看其他详细的Git安装教程。安装成功后，将你的Git与GitHub帐号绑定，鼠标右击打开Git Bash</p>
+<p><figure class="figure"><img src="https://pic1.zhimg.com/80/v2-8b1cbe253d6e0301bd9a68c6f98a9f52_hd.jpg" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>设置user.name和user.email配置信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
+<hr>
+<h5 id="3-安装Node-js"><a href="#3-安装Node-js" class="headerlink" title="3.安装Node.js"></a>3.安装Node.js</h5><p>Hexo基于Node.js，Node.js下载地址：<a href="https://link.zhihu.com/?target=https%3A//nodejs.org/en/download/" target="_blank" rel="noopener">Download | Node.js</a> 下载安装包，注意安装Node.js会包含环境变量及npm的安装，安装后，检测Node.js是否安装成功，在命令行中输入 node -v :</p>
+<p>检测npm是否安装成功，在命令行中输入npm -v :</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-13b2b300d683cbbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>到这里，安装Hexo的环境已经全部搭建完成。</p>
+<hr>
+<h5 id="4-安装Hexo"><a href="#4-安装Hexo" class="headerlink" title="4.安装Hexo"></a>4.安装Hexo</h5><p>Hexo就是我们的个人博客网站的框架， 这里需要自己在电脑常里创建一个文件夹，可以命名为Blog，Hexo框架与以后你自己发布的网页都在这个文件夹中。创建好后，进入文件夹中，按住shift键，右击鼠标点击命令行</p>
+<p><figure class="figure"><img src="https://pic4.zhimg.com/80/v2-a5450a466c0927c25dff8ad6f1d2046c_hd.jpg" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>使用npm命令安装Hexo，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>这个安装时间较长耐心等待，安装完成后，初始化我们的博客，输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<p>注意，这里的命令都是作用在刚刚创建的Blog文件夹中。</p>
+<p>为了检测我们的网站雏形，分别按顺序输入以下三条命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new test_my_site</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>完成后，打开浏览器输入地址：</p>
+<p>localhost:4000</p>
+<p>可以看出我们写出第一篇博客</p>
+<p><figure class="figure"><img src="https://pic1.zhimg.com/80/v2-123e73c0630d299b1c856d99b04b55bb_hd.jpg" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>现在来介绍常用的Hexo 命令</p>
+<p>npm install hexo -g     #安装Hexo</p>
+<p>npm update hexo -g    #升级 </p>
+<p>hexo init    #初始化博客</p>
+<p>命令简写</p>
+<p>hexo n  “我的博客” == hexo new  “我的博客”   #新建文章</p>
+<p>hexo g == hexo generate   #生成</p>
+<p>hexo s == hexo server   #启动服务预览</p>
+<p>hexo d == hexo deploy   #部署</p>
+<p>hexo server     #Hexo会监视文件变动并自动更新，无须重启服务器</p>
+<p>hexo server -s    #静态模式</p>
+<p>hexo server -p 5000     #更改端口</p>
+<p>hexo server -i 192.168.1.1     #自定义 IP</p>
+<p>hexo clean     #清除缓存，若是网页正常情况下可以忽略这条命令</p>
+<p>刚刚的三个命令依次是新建一篇博客文章、生成网页、在本地预览的操作。</p>
+<hr>
+<h5 id="5-推送网站"><a href="#5-推送网站" class="headerlink" title="5.推送网站"></a>5.推送网站</h5><p>上面只是在本地预览，接下来要做的就是就是推送网站，也就是发布网站，让我们的网站可以被更多的人访问。在设置之前，需要解释一个概念，在blog根目录里的_config.yml文件称为站点配置文件，如下图</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-71a733510cf26db2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>下一步将我们的Hexo与GitHub关联起来，打开站点的配置文件_config.yml，翻到最后修改为：</p>
+<p>deploy: </p>
+<p>type: git</p>
+<p>repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git</p>
+<p>branch: master</p>
+<p>参考如下：</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-ce3f92ce7eadd37d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>保存站点配置文件。</p>
+<p>其实就是给hexo d 这个命令做相应的配置，让hexo知道你要把blog部署在哪个位置，很显然，我们部署在我们GitHub的仓库里。最后安装Git部署插件，输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>这时，我们分别输入三条命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>也可以简写成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<p>其实第三条的 hexo d 就是部署网站命令，d是deploy的缩写。完成后，打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即 <a href="http://xxxx.github.io" target="_blank" rel="noopener">http://xxxx.github.io</a> (知乎排版可能会出现”http://“字样，参考下图) 比如我的xxxx就是我的GitHub用户名：</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-2441a917b617da6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/471" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>你就会发现你的博客已经上线了，可以在网络上被访问了。</p>
+<p>这里注意一下，第一次部署会要求你输入GitHub的用户名和密码，只需要按着要求做就行了。</p>
+<hr>
+<h5 id="6-绑定域名"><a href="#6-绑定域名" class="headerlink" title="6.绑定域名"></a>6.绑定域名</h5><p>虽然在Internet上可以访问我们的网站，但是网址是GitHub提供的:<a href="http://xxxx.github.io" target="_blank" rel="noopener">http://xxxx.github.io</a>  而我们想使用我们自己的个性化域名，这就需要绑定我们自己的域名。这里演示的是在阿里云万网的域名绑定，在国内主流的域名代理厂商也就阿里云和腾讯云。登录到腾讯云，进入管理控制台的域名列表，找到你的个性化域名，进入解析</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-ee9abaa1f705b002.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>添加解析</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-f41c5961f339c599.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>包括添加三条解析记录，151.101.229.147以及151.101.73.147是GitHub的地址，你也可以ping你的 <a href="http://username.github.io" target="_blank" rel="noopener">http://username.github.io</a> 的ip地址，填入进去。第三个记录类型是CNAME，CNAME的记录值是：username.github.io 这里千万别弄错了。第二步，登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-435098050457b571.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>点击save保存。第三步，进入本地博客文件夹 ，进入blog/source目录下，创建一个无后缀文件，用记事本或其他文本编辑器打开，输入你的域名，只要写进你自己的域名即可。</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-df949facedad66d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>保存，命名为CNAME </p>
+<p>完成这三步，进入blog目录中，打开git bush，依次输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>这时候打开浏览器在地址栏输入你的个性化域名将会直接进入你自己搭建的网站。</p>
+<hr>
+<h5 id="7-更换主题"><a href="#7-更换主题" class="headerlink" title="7.更换主题"></a>7.更换主题</h5><p>如果你不喜欢Hexo默认的主题，可以更换不同的主题，主题传送门：Themes 我自己使用的是Next主题，可以在blog目录中的themes文件夹中查看你自己主题是什么。现在把默认主题更改成Next主题，</p>
+<p>方法一：在blog目录中（就是命令行的位置处于blog目录）打开命令行输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>方法二：直接下载主题的zip压缩包，解压之后复制粘贴到blog/themes文件夹下</p>
+<p>打开站点的_config.yml配置文件，修改主题为next</p>
+<p><figure class="figure"><img src="https://pic4.zhimg.com/80/v2-b1997377e82408cb15b485c65ae00f70_hd.jpg" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>进入blog目录中，打开git bush，依次输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>这时我们的主题就换好了。</p>
+<hr>
+<h5 id="8-发布文章"><a href="#8-发布文章" class="headerlink" title="8.发布文章"></a>8.发布文章</h5><p>我们开始正式发布上线博客文章，在命令行中输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;博客名字&quot;</span><br></pre></td></tr></table></figure>
+<p>我们会发现在blog根目录下的source文件夹中的_post文件夹中多了一个 博客名字.md 文件，使用Markdown编辑器打开，就可以开始你的个人博客之旅了，Markdown常用的样式也就十来种，完全能够满足一般博文的样式要求，这是我的一篇博文内容示例：</p>
+<p><figure class="figure"><img src="https://upload-images.jianshu.io/upload_images/8375017-9faf768f990968ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"><figcaption class="figure__caption">image</figcaption></figure></p>
+<p>通过带有预览样式的Markdown编辑器实时预览书写的博文样式，也可以通过命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
+<p> 在本地浏览器的localhost:4000 预览博文效果。写好博文并且样式无误后，通过<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>生成、部署网页。随后可以在浏览器中输入域名浏览。</p>
+<hr>
+<p>至此，博客搭建工作已经完成。请开始你的创作吧！</p>
+
+	
+
+	
+		<span class="different-posts"><a href="/2018/04/09/blog/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2018 Sakura | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>

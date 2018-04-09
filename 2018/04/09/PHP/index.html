@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#33474d">
+	<title>PHP基础 | Piggie</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	
+      <link rel="alternate" href="/atom.xml" title="Piggie" type="application/atom+xml">
+    
+</head>
+
+<body>
+
+	<header class="header">
+		<nav class="header__nav">
+			
+				<a href="/archives" class="header__link">Archive</a>
+			
+				<a href="/tags" class="header__link">Tags</a>
+			
+				<a href="/atom.xml" class="header__link">RSS</a>
+			
+		</nav>
+		<h1 class="header__title"><a href="/">Piggie</a></h1>
+		<h2 class="header__subtitle"></h2>
+	</header>
+
+	<main>
+		<article>
+	
+		<h1>PHP基础</h1>
+	
+	<div class="article__infos">
+		<span class="article__date">2018-04-09</span><br />
+		
+		
+	</div>
+
+	
+
+	
+		<p>初步学习PHP入门基础</p>
+<a id="more"></a>
+<h3 id="1-认识PHP"><a href="#1-认识PHP" class="headerlink" title="1.认识PHP"></a>1.认识PHP</h3><h4 id="1-1-PHP标签"><a href="#1-1-PHP标签" class="headerlink" title="1-1 PHP标签"></a>1-1 PHP标签</h4><p>就像你可以编写HTML语言需要写在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;/html &gt;</span><br></pre></td></tr></table></figure></p>
+<p>标签之间一样，你可以在页面中编写PHP代码写在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>标签之间，但注意后面的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>是可以省略的。</p>
+<h5 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &quot;Hello Word!&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="1-2-PHP-echo语句"><a href="#1-2-PHP-echo语句" class="headerlink" title="1-2 PHP echo语句"></a>1-2 PHP echo语句</h4><p>echo是PHP中的输出语句，可以把字符串输出（字符串用双引号括起来）。</p>
+<p>如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php echo &quot;Hello world!&quot;;?&gt;</span><br></pre></td></tr></table></figure>
+<p>注意echo关键字与字符串之间至少要有一个空格。如下面写法是不正确的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php echo&quot;Hello world!&quot;;?&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="1-3-PHP运算表达式"><a href="#1-3-PHP运算表达式" class="headerlink" title="1-3 PHP运算表达式"></a>1-3 PHP运算表达式</h4><p>在PHP中，可以直接进行运算。例如我们写入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 1+1；</span><br></pre></td></tr></table></figure></p>
+<p>计算机会直接计算出结果为2.</p>
+<p>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo 1+1;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="1-4-PHP字符串"><a href="#1-4-PHP字符串" class="headerlink" title="1-4 PHP字符串"></a>1-4 PHP字符串</h4><p>一个字符串是用双引号括起来的一个词或一个句字，比如：“Hello,world!”。你可以用PHP语言输出把这个字符串输出，像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php echo &quot;Hello,world!&quot;;?&gt;</span><br></pre></td></tr></table></figure>
+<p>也可以用单引号括起来，就像下面代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php echo &apos;Hello,world!&apos;;?&gt;</span><br></pre></td></tr></table></figure>
+<p>可以把两个字符用连接符连接起来，像这样:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php echo &apos;Hello,&apos;.&apos;world!&apos;;?&gt;</span><br></pre></td></tr></table></figure>
+<p>==注意==:连接符可以连接多个字符串，上面的例子就是把一个字符串拆分为二个小字符串，然后用一个连接符连起来。</p>
+<p><strong>在php中字符串连接符是用点（.）来表示的</strong>，这一点比较特殊，其它语言中是用加号（+）来表示的，比如：JavaScirpt、Asp、C。</p>
+<hr>
+<h4 id="1-5-PHP注释"><a href="#1-5-PHP注释" class="headerlink" title="1-5 PHP注释"></a>1-5 PHP注释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    echo &quot;This is a test&quot;; // 单行注释</span><br><span class="line">    /* 多</span><br><span class="line">       行</span><br><span class="line">       注</span><br><span class="line">       释*/</span><br><span class="line">    echo &quot;This is yet another test&quot;;</span><br><span class="line">    echo &apos;One Final Test&apos;; # 单行注释</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h3><h4 id="2-1什么是变量"><a href="#2-1什么是变量" class="headerlink" title="2-1什么是变量"></a>2-1什么是变量</h4><p>变量是存储信息的容器：</p>
+<h5 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$x=5;</span><br><span class="line">$y=6;</span><br><span class="line">$z=$x+$y;</span><br><span class="line">echo $z;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>其中，x，y，z都是变量。</p>
+<hr>
+<h4 id="2-2如何定义变量"><a href="#2-2如何定义变量" class="headerlink" title="2-2如何定义变量"></a>2-2如何定义变量</h4><p>定义变量就是向服务器的内存（服务器的内存，我们可以当做一个大仓库）申请空间（我们可以理解为一个子仓库），用来存储数据。这时候我们就需要用到变量名（也就是子仓库的名字）和变量值（需要存放的东西).</p>
+<p>语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$var_name = “John”;</span><br><span class="line">$n = 10;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p> 解释一下，在“=”左边是变量名，右边是变量值，完成定义变量后，需要一个；告诉服务器这行指令已经结束。其中变量名必须通过 $ 符号标识；“=”可不是我们平常所说的等号哦，在PHP中，=是赋值运算符；在这里，var_name是变量名，“John”是变量值，它是一个字符串；n是变量名，10是变量值 </p>
+<hr>
+<h4 id="2-3变量名的命名规则"><a href="#2-3变量名的命名规则" class="headerlink" title="2-3变量名的命名规则"></a>2-3变量名的命名规则</h4><p>变量名除了需要“$”进行标识外，还有一些规则需要遵守。就像拿到驾驶证以后，还得遵守交通规则。变量名的命名规则主要有三条：</p>
+<p>1、变量名必须以字母或下划线 “_”开头，如”$_name”,”$name” ,”$name2”等，但是”$9name”是不对的。</p>
+<p>2、变量名只能由字母、数字、以及“_”组成，还能包含汉字。如”$_qq”,”$qq308” ,”$my_apple”，“比如”$name我等”，但是”$name*”是不对的。</p>
+<p>3、变量名不允许包含空格。当变量名由多个单词组成，建议使用“_”进行分隔（比如 $my_apple），俗称下划线法，或者以大写字母开头比如 $myApple，俗称骆驼式命名法（也称驼峰命名法）。</p>
+<p>特别需要注意的是，==在PHP中变量名是区分大小写的==，如“$my_book”与“$my_Book”代表两个不同的变量。</p>
+<hr>
+<h4 id="2-4变量的数据类型"><a href="#2-4变量的数据类型" class="headerlink" title="2-4变量的数据类型"></a>2-4变量的数据类型</h4><p>在PHP中，支持8种原始类型，其中包括四种标量类型、两种复合类型和两种特殊类型。PHP是一门松散类型的语言，不必向PHP声明变量的数据类型，PHP会自动把变量转换为自动的数据类型，一定程度降低了学习PHP的门槛。C语言或者JAVA语言，在声明变量的时候需要声明变量的数据类型。</p>
+<h5 id="2-4-1PHP标量类型—布尔类型"><a href="#2-4-1PHP标量类型—布尔类型" class="headerlink" title="2-4-1PHP标量类型—布尔类型"></a>2-4-1PHP标量类型—布尔类型</h5><p>==布尔类型（boolean）==：只有两个值，一个是TRUE，另一个FALSE，可以理解为是或否。它不区分大小写，也就是说”TRUE”和“true”效果是一样的。主要用在条件结构中，例如判断是否满足条件的时候，是用“true”表示满足，用“false”表示不满足。需要注意的是，当我们用”echo”指令输出布尔类型时，如果是“true”则输出的是“1”，“false”则什么也不输出。我们可以使用“var_dump”函数，获取它真正的数据类型。</p>
+<p><strong><em>实例</em></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"> $flag=TRUE;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="2-4-2-PHP标量类型—整型"><a href="#2-4-2-PHP标量类型—整型" class="headerlink" title="2-4-2 PHP标量类型—整型"></a>2-4-2 PHP标量类型—整型</h5><p>==整型（integer）==：类似于常见的整数。它可以用十进制、八进制、十六进制指定。十进制就是日常使用的数字；八进制，数字前必须加上“0”(这个0是阿拉伯数字0，可不是英文字母“欧”哦)；十六进制，数字前必须加“0x” (这个0也是阿拉伯数字0，不是“欧”哦)。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$data_int = 1234;   // 十进制数 </span><br><span class="line">$data_int = -567;    // 一个负数</span><br><span class="line">$data_int = 0123;    // 八进制数（等于十进制的 83）</span><br><span class="line">$data_int = 0x1a;    // 十六进制数（等于十进制的 26）</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-4-3-PHP标量类型—浮点型"><a href="#2-4-3-PHP标量类型—浮点型" class="headerlink" title="2-4-3 PHP标量类型—浮点型"></a>2-4-3 PHP标量类型—浮点型</h5><p>浮点型（浮点数、双精度数或实数），也就是通常说的小数，可以用小数点或者科学计数法表示。科学计数法可以使用小写的e，也可以使用大写的E。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$num_float = 1.234;    //小数点  </span><br><span class="line">$num_float = 1.2e3;    //科学计数法，小写e  </span><br><span class="line">$num_float = 7.0E-10;     //科学计数法，大写E  </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-4-4-PHP标量类型—字符串（1）"><a href="#2-4-4-PHP标量类型—字符串（1）" class="headerlink" title="2-4-4 PHP标量类型—字符串（1）"></a>2-4-4 PHP标量类型—字符串（1）</h5><p>字符串是由一系列字符组成，在PHP中，字符和字节一样，也就是说，一共有256种不同字符的可能性。</p>
+<p>字符串型可以用三种方法定义：<strong>单引号形式</strong>、<strong>双引号形式</strong>和<strong>Heredoc结构形式。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">$str_string1 = &apos;我是字符串&apos;;</span><br><span class="line">$str_string2 = &quot;我也是字符串哦&quot;;</span><br><span class="line">echo $str_string1;</span><br><span class="line">echo &quot;&lt;br /&gt;&quot;;</span><br><span class="line">echo $str_string2;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="注-：php中heredoc的使用方法"><a href="#注-：php中heredoc的使用方法" class="headerlink" title="==注==：php中heredoc的使用方法"></a>==注==：<strong>php中heredoc的使用方法</strong></h4><p>Heredoc技术，在正规的PHP文档中和技术书籍中一般没有详细讲述，只是提到了这是一种Perl风格的字符串输出技术。但是现在的一些论坛程序，和部分文章系统，都巧妙的使用heredoc技术，来部分的实现了界面与代码的准分离，phpwind模板就是一个典型的例子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">$name = &apos;浅水游&apos;;</span><br><span class="line">print &lt;&lt;&lt;EOT</span><br><span class="line">&lt;html&gt; </span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot; /&gt; </span><br><span class="line">&lt;title&gt;Untitled Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;!--12321--&gt; </span><br><span class="line">Hello,$name! </span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br><span class="line">EOT;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>1.以&lt;&lt;&lt;End开始标记开始，以End结束标记结束，结束标记必须顶头写，不能有缩进和空格，且在结束标记末尾要有分号 。开始标记和开始标记相同，比如常用大写的EOT、EOD、EOF来表示，但是不只限于那几个，只要保证开始标记和结束标记不在正文中出现即可。</p>
+<p>2.位于开始标记和结束标记之间的变量可以被正常解析，==但是函数则不可以==。在heredoc中，变量不需要用连接符.或,来拼接，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$v=2;</span><br><span class="line">$a= &lt;&lt;&lt;EOF</span><br><span class="line">&quot;abc&quot;$v</span><br><span class="line">&quot;123&quot;</span><br><span class="line">EOF;</span><br><span class="line">echo $a; //结果连同双引号一起输出：&quot;abc&quot;2 &quot;123&quot;</span><br></pre></td></tr></table></figure>
+<p>3.heredoc常用在输出包含大量HTML语法d文档的时候。比如：函数outputhtml()要输出HTML的主页。可以有两种写法。很明显第二种写法比较简单和易于阅读。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function outputhtml()&#123;</span><br><span class="line">echo &quot;&lt;html&gt;&quot;;</span><br><span class="line">echo &quot;&lt;head&gt;&lt;title&gt;主页&lt;/title&gt;&lt;/head&gt;&quot;; </span><br><span class="line">echo &quot;&lt;body&gt;主页内容&lt;/body&gt;&quot;;</span><br><span class="line">echo &quot;&lt;/html&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function outputhtml()</span><br><span class="line">&#123;</span><br><span class="line">echo &lt;&lt;&lt;EOT</span><br><span class="line">   &lt;html&gt;</span><br><span class="line">   &lt;head&gt;&lt;title&gt;主页&lt;/title&gt;&lt;/head&gt;</span><br><span class="line">   &lt;body&gt;主页内容&lt;/body&gt;</span><br><span class="line">   &lt;/html&gt;</span><br><span class="line">EOT;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outputhtml();</span><br></pre></td></tr></table></figure>
+<p>PHP heredoc 用法</p>
+<p>php 中的 heredoc技术是php用来引用字符串的一种方式。在phpwind中巧妙的运用了这个技术，实现了逻辑代码和界面设计的分离。</p>
+<p>语法：  </p>
+<ol>
+<li><p>使用操作符  “&lt;&lt;&lt;”</p>
+</li>
+<li><p>操作符后紧跟标识符（开始标识符），之后重起新的一行 输入要引用的字符串，可以包含变量。</p>
+</li>
+<li><p>新的一行，顶格写结束表示符，以分号结束。</p>
+</li>
+</ol>
+<p>要注意到几点：</p>
+<p>1.标识符可以自定义 一般的 有EOT ，EOD  EOF 等， 只有保持开始表示符和结束表示符一样即可。</p>
+<p>2.结束表示符必须独占一行，且必须顶格写，最后以 ‘;’ 分号结尾。</p>
+<p>3.所有引用的字符串中可以包含变量，无需字符串连接符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$str =</span><br><span class="line"> &lt;&lt;&lt;ET</span><br><span class="line">heredoc</span><br><span class="line"> test!!!</span><br><span class="line"> </span><br><span class="line">ET;</span><br><span class="line">echo $str;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>　输出结果<br>　<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heredoc</span><br><span class="line"> test!!!</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-4-5-PHP标量类型—字符串（2）"><a href="#2-4-5-PHP标量类型—字符串（2）" class="headerlink" title="2-4-5 PHP标量类型—字符串（2）"></a>2-4-5 PHP标量类型—字符串（2）</h5><p>当你的字符串中包含引号的时候，我们怎么办？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">$str_string1 = &apos;甲问：&quot;你在哪里学的PHP？&quot;&apos;;</span><br><span class="line">$str_string2 = &quot;乙毫不犹豫地回答：&apos;当然是慕课网咯！&apos;&quot;;</span><br><span class="line">$str_string3 = &apos;甲问:\&apos;能告诉我网址吗？\&apos;&apos;;</span><br><span class="line">$str_string4 = &quot;乙答道:\&quot;www.imooc.com\&quot;&quot;;</span><br><span class="line">echo $str_string1;</span><br><span class="line">echo &quot;&lt;br /&gt;&quot;;</span><br><span class="line">echo $str_string2;</span><br><span class="line">echo &quot;&lt;br /&gt;&quot;;</span><br><span class="line">echo $str_string3;</span><br><span class="line">echo &quot;&lt;br /&gt;&quot;;</span><br><span class="line">echo $str_string4;</span><br><span class="line">echo &quot;&lt;br /&gt;&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>第一种方案：在单引号中嵌入双引号，如第2行所示；</p>
+<p>第二种方案：在双引号中嵌入单引号，如第3行所示；</p>
+<p>第三种方案：使用转义符“\”(后面部分还有介绍)，分别如第4行和第5行所示；</p>
+<h5 id="2-4-6-PHP标量类型—字符串（3）"><a href="#2-4-6-PHP标量类型—字符串（3）" class="headerlink" title="2-4-6 PHP标量类型—字符串（3）"></a>2-4-6 PHP标量类型—字符串（3）</h5><p>当引号遇到美元咋办？这里的美元可不是真正的美元，而是用美元符号标识的变量。</p>
+<p>当双引号中包含变量时，变量会与双引号中的内容连接在一起；</p>
+<p>当单引号中包含变量时，变量会被当做字符串输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">$love = &quot;I love you!&quot;; </span><br><span class="line">$string1 = &quot;PHP,$love&quot;;</span><br><span class="line">$string2 = &apos;PHP,$love&apos;;</span><br><span class="line">echo $string1;</span><br><span class="line">echo &quot;&lt;br /&gt;&quot;;</span><br><span class="line">echo $string2;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>6</p>
+
+	
+
+	
+		<span class="different-posts"><a href="/2018/04/09/PHP/" onclick="window.history.go(-1); return false;">⬅️ Go back </a></span>
+
+	
+
+</article>
+
+	</main>
+
+	<footer class="footer">
+	<div class="footer-content">
+		
+	      <div class="footer__element">
+	<p>Hi there, <br />welcome to my Blog glad you found it. Have a look around, will you?</p>
+</div>
+
+	    
+	      <div class="footer__element">
+	<h5>Check out</h5>
+	<ul class="footer-links">
+		<li class="footer-links__link"><a href="/archives">Archive</a></li>
+		
+		  <li class="footer-links__link"><a href="/atom.xml">RSS</a></li>
+	    
+		<li class="footer-links__link"><a href="/about">about page</a></li>
+		<li class="footer-links__link"><a href="/tags">Tags</a></li>
+		<li class="footer-links__link"><a href="/categories">Categories</a></li>
+	</ul>
+</div>
+
+	    
+
+		<div class="footer-credit">
+			<span>© 2018 Sakura | Powered by <a href="https://hexo.io/">Hexo</a> | Theme <a href="https://github.com/HoverBaum/meilidu-hexo">MeiliDu</a></span>
+		</div>
+
+	</div>
+
+
+</footer>
+
+
+
+</body>
+
+</html>
